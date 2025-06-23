@@ -48,11 +48,48 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.5
+          "min_clearance": 0.2
         }
       },
       "diff_pair_dimensions": [],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "hole_clearance|129395000|93880000|e107f6ac-412d-43f4-8551-0e0c45c9ee5b|7f9bd6d2-ad64-4db0-be4b-67e764e5a478",
+          ""
+        ],
+        [
+          "hole_clearance|129395000|93880000|e107f6ac-412d-43f4-8551-0e0c45c9ee5b|8f5f8981-2b20-4064-bd86-777687eec117",
+          ""
+        ],
+        [
+          "hole_clearance|129395000|99980000|3853c926-db45-47df-8b45-2815b30b9c46|55313209-0ddd-4b3f-a6a2-0277b4b9496f",
+          ""
+        ],
+        [
+          "hole_clearance|129395000|99980000|3853c926-db45-47df-8b45-2815b30b9c46|a6df3494-b9cf-4006-9e60-0d808bbab039",
+          ""
+        ],
+        [
+          "silk_edge_clearance|160000000|93830000|bbb7deef-fc39-40e8-bfe6-dfab60673a9f|59a32d67-4f05-4154-931b-17e77a2d67c2",
+          ""
+        ],
+        [
+          "silk_edge_clearance|160000000|96370000|bbb7deef-fc39-40e8-bfe6-dfab60673a9f|9afb5138-b758-4dac-b81a-973c02d98964",
+          ""
+        ],
+        [
+          "silk_edge_clearance|160000000|97230000|bbb7deef-fc39-40e8-bfe6-dfab60673a9f|295b3140-0e59-4669-9d7a-7ffc31017419",
+          ""
+        ],
+        [
+          "silk_edge_clearance|160000000|98910000|bbb7deef-fc39-40e8-bfe6-dfab60673a9f|4946d84c-7255-4bfd-a026-ee882dcf1c28",
+          ""
+        ],
+        [
+          "silk_edge_clearance|160000000|99770000|bbb7deef-fc39-40e8-bfe6-dfab60673a9f|d004aa14-d7b7-4a81-b3a8-6d71b0c7adf5",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -208,7 +245,7 @@
         }
       },
       "via_dimensions": [],
-      "zones_allow_external_fillets": false
+      "zones_allow_external_fillets": true
     },
     "ipc2581": {
       "dist": "",
@@ -477,7 +514,9 @@
     "meta": {
       "version": 4
     },
-    "net_colors": null,
+    "net_colors": {
+      "+3V3": "rgb(0, 255, 0)"
+    },
     "netclass_assignments": null,
     "netclass_patterns": []
   },
