@@ -45,4 +45,8 @@ kikit panelize \
     --post 'millradius: 1mm' \
     ESP_32_Programer.kicad_pcb panel/panel.kicad_pcb
 ```
+## Licence
+
+![](doc/oshw_facts.png)
+
 Author: Maykol Rey
