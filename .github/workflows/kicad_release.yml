@@ -1,24 +1,25 @@
 name: KiCad CI · ERC/DRC · Fabrication · Release
+
 on:
   push:
-    branches: [ main, master ]   # ajusta si usas otra rama
-    tags:     [ "v*", "release-*", "*" ]  # si haces push con tag, lo toma como release formal
+    branches: [ main, master ]
+    tags: [ "v*", "release-*", "*" ]
 
 permissions:
-  contents: write   # necesario para crear/actualizar releases y subir assets
+  contents: write
+
 jobs:
   kicad:
     name: Validate · Build · Release
     runs-on: ubuntu-latest
-    # Usamos el contenedor oficial que trae kicad-cli
     container: kicad/kicad:9.0
 
     env:
       PROJECT_NAME: "ESP_32_Programer"
-      PCB_FILE: "ESP_32_Programer.kicad_pcb"
       SCH_FILE: "ESP_32_Programer.kicad_sch"
-      OUT_DIR:  "${{ github.workspace }}/out"
-      REPORTS_DIR: "${{ github.workspace }}/reports"
+      PCB_FILE: "ESP_32_Programer.kicad_pcb"
+      OUT_DIR: "out"
+      REPORTS_DIR: "reports"
 
     steps:
       - name: Checkout
@@ -46,39 +47,43 @@ jobs:
       - name: ERC (schematic)
         run: |
           set -euxo pipefail
-          kicad-cli sch erc --exit-code-violations \
+          kicad-cli sch erc --severity-all --exit-code-violations \
             -o "${REPORTS_DIR}/erc.rpt" "${SCH_FILE}"
 
       - name: DRC (pcb)
         run: |
           set -euxo pipefail
-          kicad-cli pcb drc --exit-code-violations \
+          kicad-cli pcb drc --severity-all --exit-code-violations \
             -o "${REPORTS_DIR}/drc.rpt" "${PCB_FILE}"
+
+      - name: List workspace (diagnóstico)
+        if: always()
+        run: |
+          echo "PWD=$(pwd)"
+          ls -lah
+          echo "== reports/ =="
+          ls -lah reports || true
 
       - name: Upload validation reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: kicad-reports-${{ steps.meta.outputs.tag }}
-          path: reports/
+          path: reports/**
+          if-no-files-found: warn
 
-      # ---------- FABRICATION (solo si pasó ERC/DRC) ----------
+      # ---------- FABRICATION ----------
       - name: Exports (Gerbers / Drill / POS / BOM / PDF)
         run: |
           set -euxo pipefail
-          # Gerbers + Drill
           kicad-cli pcb export gerbers --output "${OUT_DIR}/gerbers" "${PCB_FILE}"
           kicad-cli pcb export drill   --format excellon --output "${OUT_DIR}/drill" "${PCB_FILE}"
-          # Pick&Place
           kicad-cli pcb export pos --output "${OUT_DIR}/pos/${PROJECT_NAME}.pos" --units mm --format csv "${PCB_FILE}"
-          # BOM con etiqueta del release
           SAFE_TAG="$(printf '%s' "${{ steps.meta.outputs.tag }}" | sed 's/[^A-Za-z0-9._-]/_/g')"
-          kicad-cli sch export bom --output "${OUT_DIR}/bom/${PROJECT_NAME}_bom_${SAFE_TAG}.csv" \
+          kicad-cli sch export bom --output "${OUT_DIR}/${PROJECT_NAME}_bom_${SAFE_TAG}.csv" \
             --fields "Reference,Value,Footprint,Datasheet" "${SCH_FILE}"
-          # PDFs
-          kicad-cli sch export pdf --output "${OUT_DIR}/docs/${PROJECT_NAME}_schematic.pdf" "${SCH_FILE}"
-          kicad-cli pcb export pdf --output "${OUT_DIR}/docs/${PROJECT_NAME}_pcb.pdf" "${PCB_FILE}"
-          # Paquete .tar.gz en la raíz del workspace
+          kicad-cli sch export pdf --output "${OUT_DIR}/${PROJECT_NAME}_schematic.pdf" "${SCH_FILE}"
+          kicad-cli pcb export pdf --output "${OUT_DIR}/${PROJECT_NAME}_pcb.pdf" "${PCB_FILE}"
           TAR="${PROJECT_NAME}_fab_${{ steps.meta.outputs.tag }}.tar.gz"
           tar -czf "$TAR" -C "$OUT_DIR" .
           echo "TAR=$TAR" >> $GITHUB_ENV
