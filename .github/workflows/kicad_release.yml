@@ -12,7 +12,9 @@ jobs:
   kicad:
     name: Validate · Build · Release
     runs-on: ubuntu-latest
-    container: kicad/kicad:9.0
+    container:
+      image: kicad/kicad:9.0
+      options: --user 0:0   # ⬅️ corre como root para evitar EACCES en /__w/_temp y workspace
 
     env:
       PROJECT_NAME: "ESP_32_Programer"
@@ -25,6 +27,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # (opcional) si quisieras volver a usuario "kicad": crea el usuario y cambia dueños
+      # - name: Prepare user (optional)
+      #   run: |
+      #     id -u kicad &>/dev/null || useradd -m -u 1000 kicad || true
+      #     chown -R kicad:kicad /github /__w || true
+
       - name: Compute tag / prerelease flag
         id: meta
         shell: bash
@@ -36,7 +44,7 @@ jobs:
             echo "tag=build-${GITHUB_SHA::8}" >> "$GITHUB_OUTPUT"
             echo "prerelease=true"            >> "$GITHUB_OUTPUT"
           fi
-          echo "TAG=$(cat $GITHUB_OUTPUT | sed -n 's/^tag=//p')"
+          echo "TAG=$(sed -n 's/^tag=//p' "$GITHUB_OUTPUT")"
 
       - name: Prepare dirs
         run: |
@@ -47,13 +55,13 @@ jobs:
       - name: ERC (schematic)
         run: |
           set -euxo pipefail
-          kicad-cli sch erc --exit-code-violations \
+          kicad-cli sch erc --severity-all --exit-code-violations \
             -o "${REPORTS_DIR}/erc.rpt" "${SCH_FILE}"
 
       - name: DRC (pcb)
         run: |
           set -euxo pipefail
-          kicad-cli pcb drc --exit-code-violations \
+          kicad-cli pcb drc --severity-all --exit-code-violations \
             -o "${REPORTS_DIR}/drc.rpt" "${PCB_FILE}"
 
       - name: List workspace (diagnóstico)
