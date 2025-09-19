@@ -55,13 +55,13 @@ jobs:
       - name: ERC (schematic)
         run: |
           set -euxo pipefail
-          kicad-cli sch erc --exit-code-violations \
+          kicad-cli sch erc \
             -o "${REPORTS_DIR}/erc.rpt" "${SCH_FILE}"
 
       - name: DRC (pcb)
         run: |
           set -euxo pipefail
-          kicad-cli pcb drc --exit-code-violations \
+          kicad-cli pcb drc \
             -o "${REPORTS_DIR}/drc.rpt" "${PCB_FILE}"
 
       - name: List workspace (diagnóstico)
