@@ -1,5 +1,4 @@
 name: KiCad CI · ERC/DRC · Fabrication · Release
-
 on:
   push:
     branches: [ main, master ]   # ajusta si usas otra rama
