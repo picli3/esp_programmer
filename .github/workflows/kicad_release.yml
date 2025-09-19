@@ -14,9 +14,9 @@ jobs:
     container: kicad/kicad:9.0
 
     env:
-      PROJECT_NAME: "kuska-lte"
-      SCH_FILE: "${{ env.PROJECT_NAME }}.kicad_sch"
-      PCB_FILE: "${{ env.PROJECT_NAME }}.kicad_pcb"
+      PROJECT_NAME: "ESP_32_Programer"
+      PCB_FILE: "ESP_32_Programer.kicad_pcb"
+      SCH_FILE: "ESP_32_Programer.kicad_sch"
       OUT_DIR:  "${{ github.workspace }}/out"
       REPORTS_DIR: "${{ github.workspace }}/reports"
 
