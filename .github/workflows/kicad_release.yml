@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: write   # necesario para crear/actualizar releases y subir assets
-
 jobs:
   kicad:
     name: Validate · Build · Release
