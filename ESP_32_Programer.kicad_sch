@@ -5,9 +5,9 @@
 	(uuid "13ac950b-0fd9-4f6b-b636-39285bc1995b")
 	(paper "A4")
 	(title_block
-		(title "ESP32_programer")
+		(title "ESP32_prog_lite")
 		(date "2025-06-17")
-		(rev "v1.0.0")
+		(rev "v1.1.0")
 	)
 	(lib_symbols
 		(symbol "Connector:USB_C_Receptacle_USB2.0_14P"
@@ -6733,7 +6733,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part #" ""
+		(property "Part #" "0603WAF100JT5E"
 			(at 82.55 86.36 0)
 			(effects
 				(font
@@ -6742,7 +6742,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "UNI-ROYAL"
 			(at 82.55 86.36 0)
 			(effects
 				(font
@@ -6940,7 +6940,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part #" ""
+		(property "Part #" "RC0603FR-07330RL"
 			(at 196.85 105.41 0)
 			(effects
 				(font
@@ -6949,7 +6949,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 196.85 105.41 0)
 			(effects
 				(font
@@ -7147,7 +7147,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part #" ""
+		(property "Part #" "RC0603FR-07330RL"
 			(at 177.8 102.87 0)
 			(effects
 				(font
@@ -7156,7 +7156,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 177.8 102.87 0)
 			(effects
 				(font
@@ -7386,7 +7386,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part #" ""
+		(property "Part #" "CL10A475KP8NNNC"
 			(at 157.48 53.34 0)
 			(effects
 				(font
@@ -7395,7 +7395,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 157.48 53.34 0)
 			(effects
 				(font
@@ -7765,7 +7765,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part #" ""
+		(property "Part #" "NCD0603R1"
 			(at 185.42 105.41 0)
 			(effects
 				(font
@@ -7774,7 +7774,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "NATIONSTAR"
 			(at 185.42 105.41 0)
 			(effects
 				(font
@@ -8011,7 +8011,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part #" ""
+		(property "Part #" "NCD0603R1"
 			(at 166.37 102.87 0)
 			(effects
 				(font
@@ -8020,7 +8020,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "NATIONSTAR"
 			(at 166.37 102.87 0)
 			(effects
 				(font
@@ -8369,7 +8369,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part #" ""
+		(property "Part #" "CC0603KRX7R9BB104"
 			(at 144.78 53.34 0)
 			(effects
 				(font
@@ -8378,7 +8378,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 144.78 53.34 0)
 			(effects
 				(font
@@ -8515,7 +8515,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part #" ""
+		(property "Part #" "RC0603FR-0747K5L"
 			(at 113.03 101.6 0)
 			(effects
 				(font
@@ -8524,7 +8524,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 113.03 101.6 0)
 			(effects
 				(font
@@ -8821,7 +8821,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part #" ""
+		(property "Part #" "TYPE-C 16PIN 2MD(073)"
 			(at 50.8 88.9 0)
 			(effects
 				(font
@@ -8830,7 +8830,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "SHOU HAN"
 			(at 50.8 88.9 0)
 			(effects
 				(font
@@ -9033,7 +9033,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part #" ""
+		(property "Part #" "CL21B105KBFNNNE"
 			(at 218.44 152.4 0)
 			(effects
 				(font
@@ -9042,7 +9042,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 218.44 152.4 0)
 			(effects
 				(font
@@ -9305,7 +9305,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part #" ""
+		(property "Part #" "0603WAF5101T5E"
 			(at 72.39 81.28 0)
 			(effects
 				(font
@@ -9314,7 +9314,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "UNI-ROYAL"
 			(at 72.39 81.28 0)
 			(effects
 				(font
@@ -9578,6 +9578,24 @@
 			)
 		)
 		(property "LCSC" "C22859"
+			(at 90.17 91.44 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part #" "0603WAF100JT5E"
+			(at 90.17 91.44 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
 			(at 90.17 91.44 90)
 			(effects
 				(font
@@ -9935,7 +9953,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part #" ""
+		(property "Part #" "0603WAF5101T5E"
 			(at 72.39 78.74 0)
 			(effects
 				(font
@@ -9944,7 +9962,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "UNI-ROYAL"
 			(at 72.39 78.74 0)
 			(effects
 				(font
@@ -10550,7 +10568,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part #" ""
+		(property "Part #" "CL21B105KBFNNNE"
 			(at 186.69 151.13 0)
 			(effects
 				(font
@@ -10559,7 +10577,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 186.69 151.13 0)
 			(effects
 				(font
@@ -10866,7 +10884,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part #" ""
+		(property "Part #" "RC0603FR-0722K1L"
 			(at 113.03 76.2 0)
 			(effects
 				(font
@@ -10875,7 +10893,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 113.03 76.2 0)
 			(effects
 				(font
@@ -11177,7 +11195,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part #" ""
+		(property "Part #" "ARG03FTC1001"
 			(at 123.19 63.5 0)
 			(effects
 				(font
@@ -11186,7 +11204,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "Viking"
 			(at 123.19 63.5 0)
 			(effects
 				(font
@@ -11359,7 +11377,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part #" ""
+		(property "Part #" "CP2102N-A02-GQFN28R"
 			(at 139.7 100.33 0)
 			(effects
 				(font
@@ -11368,7 +11386,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "SILICON LABS"
 			(at 139.7 100.33 0)
 			(effects
 				(font

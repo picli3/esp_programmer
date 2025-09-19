@@ -90,10 +90,6 @@
           ""
         ],
         [
-          "text_thickness|140500000|99700000|8b4cb3c8-33f4-467e-a5bd-9668b3463cf9|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
           "text_thickness|147687788|97400000|da67efa6-b586-44e2-b8ea-2a64cf5968ef|00000000-0000-0000-0000-000000000000",
           ""
         ]
@@ -271,16 +267,7 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [
-      [
-        "power_pin_not_driven|1130300|1079500|7ae7d28d-43b5-42d6-94f0-9bfb67e04ada|00000000-0000-0000-0000-000000000000|/13ac950b-0fd9-4f6b-b636-39285bc1995b|/13ac950b-0fd9-4f6b-b636-39285bc1995b|",
-        ""
-      ],
-      [
-        "power_pin_not_driven|698500|685800|ae55f61a-4062-4447-b7f0-f877aef58d42|00000000-0000-0000-0000-000000000000|/13ac950b-0fd9-4f6b-b636-39285bc1995b|/13ac950b-0fd9-4f6b-b636-39285bc1995b|",
-        ""
-      ]
-    ],
+    "erc_exclusions": [],
     "meta": {
       "version": 0
     },
@@ -484,7 +471,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "same_local_global_label": "warning",
       "similar_label_and_power": "warning",
@@ -494,6 +481,7 @@
       "single_global_label": "ignore",
       "unannotated": "error",
       "unconnected_wire_endpoint": "warning",
+      "undefined_netclass": "error",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
       "wire_dangling": "error"
@@ -662,7 +650,7 @@
           "group_by": false,
           "label": "Manufacturer",
           "name": "Manufacturer",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -782,7 +770,7 @@
           "group_by": false,
           "label": "Description",
           "name": "Description",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
