@@ -28,3 +28,21 @@ This approach has allowed us to develop a programmer that offers a low-cost, hig
 
 * **Production efficiency:** Enables quick and easy programming using Pogo-Pin connectors, streamlining the manufacturing process.
 
+## Generate panel
+
+To do this it is required [Kikit](https://github.com/yaqwsx/KiKit?tab=readme-ov-file)
+
+```sh
+kikit panelize \
+    --layout 'grid; rows: 6; cols: 2; space: 2mm' \
+    --tabs 'fixed; width: 3mm; vcount: 2' \
+    --cuts 'mousebites; drill: 0.5mm; spacing: 1mm; offset: 0.2mm; prolong: 0.5mm' \
+    --framing 'railstb; width: 5mm; space: 3mm;' \
+    --tooling '3hole; hoffset: 2.5mm; voffset: 2.5mm; size: 1.5mm' \
+    --fiducials '3fid; hoffset: 5mm; voffset: 2.5mm; coppersize: 2mm; opening: 1mm;' \
+    --text 'simple; text: MaykolRey.com; anchor: mt; voffset: 2.5mm; hjustify: center; vjustify: center;' \
+    --text2 'simple; text: Created on {date}; anchor: mb; voffset: -2.5mm; hjustify: center; vjustify: center;' \
+    --post 'millradius: 1mm' \
+    ESP_32_Programer.kicad_pcb panel/panel.kicad_pcb
+```
+Author: Maykol Rey
