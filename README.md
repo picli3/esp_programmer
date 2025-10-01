@@ -1,5 +1,6 @@
 
-![](doc/PE0000001_200px.png)
+![](doc/PE0000001_200px.png) </br>
+[certification OSHW](https://certification.oshwa.org/pe000001.html)
 
 ---
 # ESP32 Prog Lite
