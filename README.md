@@ -1,3 +1,7 @@
+
+![](doc/PE0000001_200px.png)
+
+---
 # ESP32 Prog Lite
 
 This module was designed to optimize the programming of ESP32 devices in production environments. It emerged as a solution to a common problem: the need to efficiently and cost-effectively program electronic products that don't require a USB port for final operation.
